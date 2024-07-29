@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.amsidh.mvc.service";
+import "ecommerce-models.proto";
+
+// These are Product Service exposed as grpc
+service ProductService {
+  //Unary API
+  rpc GetProduct(ProductIdRequest) returns (ProductResponse) {}
+  //Unary API
+  rpc AddProduct (ProductRequest) returns (ProductResponse) {}
+  //Unary API
+  rpc GetAllProduct (NoParam) returns (AllProductsResponse) {}
+}
